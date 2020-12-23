@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>multi</title>
+
+
+    <script>
+        function multi(num) {
+        num = document.getElementById('number').value
+        div = document.getElementById('disp');
+        div.innerHTML = ""; // กำหนดค่าว่างให้แอททริบิวท์ innerHTML
+        table =``
+        for (i = 1; i <= 12; i++) {
+            table += `<tr>
+                                <td>${num} x ${i }</td>
+                                <td>${num*i}</td>
+                   </tr>`
+            
+        }
+        div.innerHTML =table
+    }
+        
+    </script>
+    <style>
+        b{
+            color:whitesmoke;
+            font-size: 30px;
+
+        }
+        button{
+			color:black;
+		    background:rgb(249, 141, 253);
+			border-color:rgb(153, 46, 126);
+			border-width: 0.5px;
+		}
+        button:hover{
+		    
+            color:rgb(0, 0, 0);
+			background-color:#6b62ec;
+			border-color:#343377;
+			border-width: 0.5px;
+		}
+        input{
+            background-color:#eeabe8;
+        }
+        
+
+    </style>
+</head>
+<body align = "center" background="multi.jpg">
+    <b >2.โปรแกรมสูตรคูณ - multi.html</b></br></br>
+    <input type="Integer" id="number" > 
+    <button onclick="multi();">คำนวณ</button></br>
+    <table border="2 " align = "center"></br>
+       <tbody id="disp"></tbody> 
+    </table>
+    
+   
+</body>
+</html>

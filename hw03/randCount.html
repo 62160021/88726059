@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>random</title>
+    <script>
+        function ramdom(){
+            s = document.getElementById('s');
+            result = document.getElementById('result');
+            result.innerHtML = ''
+            number = []
+            for(i = 1 ; i<=parseInt(s.value); i++){
+                rn = Math.floor(Math.random()*100);
+                number.push(rn) 
+            }
+            number.sort((a,b) => a-b)
+
+            console.log(number)
+            count = 1
+            table =``
+            for(i = 1;i<=number.length;i++){
+                if(number[i] == number[i-1]){
+                    count++
+                }else{
+                    table += `<tr>
+                                <td>${number[i - 1]}</td>
+                                <td>${count}</td>
+                        </tr>`
+                    count = 1
+                }
+            }
+            result.innerHTML = table
+
+        }
+    </script>
+    <style>
+        b{
+            color:whitesmoke;
+            font-size: 30px;
+
+        }
+        button{
+			color:black;
+		    background:rgb(212, 94, 248);
+			border-color:rgb(119, 46, 153);
+			border-width: 0.5px;
+		}
+        button:hover{
+		    
+            color:rgb(0, 0, 0);
+			background-color:#ff81f4;
+			border-color:#701d69;
+			border-width: 0.5px;
+		}
+        input{
+            background-color:#caabee;
+        }
+    </style>
+</head>
+<body align = "center" background="randCount.jpg">
+    <b >5.โปรแกรมสุ่มตัวเลข 0-99 -randCount.html</b></br></br>
+    <input type="text" id="s">
+    <button onclick="ramdom()">สุ่ม</button></br></br>
+    <table border="2" align = "center" style= "color: whitesmoke;">
+        <tr>
+            <td>ตัวเลขที่สุ่ม</td>
+            <td>จำนวนที่สุ่ม(ครั้ง)</td>
+        </tr>
+        <tbody id="result"></tbody>
+    </table>
+
+</body>
+</html>
